@@ -1,11 +1,20 @@
 class Fighter:
-    def __init__(self, name, power, energy, health):
-        self.name = ''
-        self.power = 100
-        self.energy = 100
-        self. health = 100
-action = input('Enter action (hit/struggle/protection: ')
-if action == 'hit':
+    def __init__(self, name, power, energy, health=100):
+        self.name = name
+        self.power = power
+        self.energy = energy
+        self.health = health
+# action = input('Enter action (hit/struggle/protection: ')
+# if action == 'hit':
+
+    def choise_style(self):
+        if self.power < self.energy:
+            Fighter == wrestler
+            print('Ваш боец класса "борец"')
+        else:
+            Fighter == boxer
+            print('Ваш боец класса "боксер"')
+
 
 
     def struggle(self, energy):
@@ -17,20 +26,25 @@ if action == 'hit':
         self.energy -= 5
         self.power -= 5
 
-    def protection(self, energy, health):
+    def protection(self, energy):
         self.energy -= 5
         self.health -= 10
 
 class wrestler(Fighter):
-    def __init__(self, name, power, energy, health):
+    def __init__(self, name, power, energy, health=100):
         self.name = name
         self.power = power
         self.energy = energy
         self. health = health
 
-class Boxer(Fighter):
-    def __init__(self, name, power, energy, health):
+class boxer(Fighter):
+    def __init__(self, name, power, energy, health=100):
         self.name = name
         self.power = power
         self.energy = energy
         self. health = health
+
+khabib = Fighter('haba', 70, 90)
+konor = Fighter('konor', 95, 70)
+khabib.choise_style()
+konor.choise_style()
