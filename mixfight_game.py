@@ -22,13 +22,16 @@ class Fighter:
         self.power -= 10
 
 
-    def hit(self, power, energy):
-        self.energy -= 5
-        self.power -= 5
+    def hit(self, damage):
+        damage.health -= 10
+        print('Урон -10!')
 
-    def protection(self, energy):
-        self.energy -= 5
-        self.health -= 10
+
+    def protection(self, damage, energy):
+        damage.health -=5
+        self.energy -=10
+        print('Урон -5!')
+
 
 class wrestler(Fighter):
     def __init__(self, name, power, energy, health=100):
@@ -37,6 +40,7 @@ class wrestler(Fighter):
         self.energy = energy
         self. health = health
 
+
 class boxer(Fighter):
     def __init__(self, name, power, energy, health=100):
         self.name = name
@@ -44,7 +48,10 @@ class boxer(Fighter):
         self.energy = energy
         self. health = health
 
+
 khabib = Fighter('haba', 70, 90)
 konor = Fighter('konor', 95, 70)
 khabib.choise_style()
 konor.choise_style()
+khabib.hit(70)
+print(khabib)
